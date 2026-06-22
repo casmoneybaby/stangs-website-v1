@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
-import Image from "next/image";
+
 
 const galleryImages = [
   {
@@ -72,12 +72,11 @@ export default function Gallery() {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="group relative aspect-square rounded-2xl overflow-hidden shadow-sm shadow-black/10 hover:shadow-xl hover:shadow-black/20 transition-all duration-300"
             >
-              <Image
+              <img
                 src={item.src}
                 alt={item.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
