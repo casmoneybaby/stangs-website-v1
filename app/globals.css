@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #FFFDF7;
+  --color-foreground: #2D2D2D;
+  --color-ketchup: #C41E3A;
+  --color-ketchup-dark: #9A1830;
+  --color-mustard: #E4A010;
+  --color-mustard-light: #F5C842;
+  --color-bun: #F5E6D3;
+  --color-bun-dark: #E8D4BC;
+  --color-charcoal: #2D2D2D;
+  --color-charcoal-light: #4A4A4A;
+  --color-pickle: #4A7C59;
+  --color-pickle-light: #6B9E7A;
+  --color-cream: #FFFDF7;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-500: #6B7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bun);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ketchup);
+  border-radius: var(--radius-full);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-mustard);
+  color: var(--color-charcoal);
+}
+
+/* Mustard underline accent */
+.mustard-underline {
+  background-image: linear-gradient(120deg, var(--color-mustard) 0%, var(--color-mustard) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.3em;
+  background-position: 0 88%;
+}
+
+/* Grill mark texture overlay */
+.grill-texture {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 12px,
+    rgba(45, 45, 45, 0.03) 12px,
+    rgba(45, 45, 45, 0.03) 14px
+  );
+}
+
+/* Pill button shape */
+.btn-pill {
+  border-radius: var(--radius-full);
+}
+
+/* Steam animation */
+@keyframes steam {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.steam-particle {
+  animation: steam 2.5s ease-out infinite;
+}
+
+.steam-particle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.steam-particle:nth-child(3) {
+  animation-delay: 1s;
+}
+.steam-particle:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Bounce subtle */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Sizzle text effect */
+@keyframes sizzle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.animate-sizzle {
+  animation: sizzle 3s ease-in-out infinite;
+}
