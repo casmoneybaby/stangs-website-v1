@@ -6,7 +6,9 @@ import BuildYourDog from "./sections/BuildYourDog";
 import WhyStangs from "./sections/WhyStangs";
 import Location from "./sections/Location";
 import Reviews from "./sections/Reviews";
+import Gallery from "./sections/Gallery";
 import FAQ from "./sections/FAQ";
+import ContactForm from "./sections/ContactForm";
 import CTA from "./sections/CTA";
 import Footer from "./sections/Footer";
 
@@ -21,7 +23,9 @@ export default function Home() {
         <WhyStangs />
         <Location />
         <Reviews />
+        <Gallery />
         <FAQ />
+        <ContactForm />
         <CTA />
       </main>
       <Footer />

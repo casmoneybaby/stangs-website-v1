@@ -220,7 +220,7 @@ export default function BuildYourDog() {
                         ? "bg-pickle-light"
                         : selections[0]?.includes("Hot Link")
                         ? "bg-ketchup"
-                        : "bg-amber-700"
+                        : "bg-charcoal-light"
                     }`}
                   />
                   {/* Bun top */}
@@ -253,14 +253,14 @@ export default function BuildYourDog() {
                       key={s}
                       initial={{ scaleY: 0 }}
                       animate={{ scaleY: 1 }}
-                      className={`absolute w-3 rounded-full z-25 origin-top ${
+                      className={`absolute w-3 rounded-full z-[25] origin-top ${
                         s.includes("Mustard")
                           ? "bg-mustard"
                           : s.includes("Ketchup")
                           ? "bg-ketchup"
                           : s.includes("Cheese")
-                          ? "bg-yellow-400"
-                          : "bg-amber-600"
+                          ? "bg-mustard-light"
+                          : "bg-charcoal-light"
                       }`}
                       style={{
                         left: `${30 + i * 40}px`,

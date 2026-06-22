@@ -19,7 +19,7 @@ export default function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wide uppercase bg-mustard/15 text-mustard-dark rounded-full">
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wide uppercase bg-mustard/15 text-mustard rounded-full">
             FAQ
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-charcoal mb-4">
@@ -40,6 +40,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
                 className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
               >
                 <div className="flex items-center gap-3">

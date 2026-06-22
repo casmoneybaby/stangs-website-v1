@@ -39,6 +39,7 @@ export const navLinks = [
   { label: "Menu", href: "#menu" },
   { label: "Build Your Dog", href: "#build" },
   { label: "Why Stang's", href: "#why" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Visit", href: "#visit" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -268,8 +269,10 @@ export const footerLinks = [
   { label: "Menu", href: "#menu" },
   { label: "Build Your Dog", href: "#build" },
   { label: "Why Stang's", href: "#why" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Visit", href: "#visit" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const ownerConfirmationItems = [
