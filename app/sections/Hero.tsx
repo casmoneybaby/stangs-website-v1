@@ -17,6 +17,27 @@ export default function Hero() {
       {/* Grill line texture */}
       <div className="absolute inset-0 opacity-[0.03] grill-texture" />
 
+      {/* Food image accent - bottom right */}
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="absolute bottom-0 right-0 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] z-[5] pointer-events-none"
+      >
+        <div className="relative w-full h-full">
+          <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-transparent to-charcoal z-10" />
+          <img
+            src="/images/hotdog-1.jpg"
+            alt="Gourmet hot dog"
+            className="w-full h-full object-cover object-center opacity-40 mask-image-gradient"
+            style={{
+              maskImage: "linear-gradient(to top left, black 30%, transparent 80%)",
+              WebkitMaskImage: "linear-gradient(to top left, black 30%, transparent 80%)",
+            }}
+          />
+        </div>
+      </motion.div>
+
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-20 pb-32">
         {/* Steam animation */}

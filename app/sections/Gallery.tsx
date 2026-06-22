@@ -1,15 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, ImageOff } from "lucide-react";
+import { Camera } from "lucide-react";
+import Image from "next/image";
 
-const placeholderItems = [
-  { label: "Classic Dog", color: "bg-ketchup/10" },
-  { label: "Chili Dog", color: "bg-mustard/10" },
-  { label: "Polish Sausage", color: "bg-pickle/10" },
-  { label: "Loaded Toppings", color: "bg-bun/50" },
-  { label: "Outdoor Seating", color: "bg-ketchup/10" },
-  { label: "The Village Vibes", color: "bg-mustard/10" },
+const galleryImages = [
+  {
+    src: "/images/hotdog-1.jpg",
+    alt: "Gourmet hot dog with fresh toppings",
+    label: "Classic Dog",
+  },
+  {
+    src: "/images/hotdog-2.jpg",
+    alt: "Grilled hot dog close up",
+    label: "Grilled Perfection",
+  },
+  {
+    src: "/images/sausage-1.jpg",
+    alt: "Grilled sausage platter",
+    label: "Polish Sausage",
+  },
+  {
+    src: "/images/chili-dog.jpg",
+    alt: "Chili cheese hot dog",
+    label: "Chili Dog",
+  },
+  {
+    src: "/images/toppings.jpg",
+    alt: "Hot dog loaded with toppings",
+    label: "Loaded Up",
+  },
+  {
+    src: "/images/outdoor.jpg",
+    alt: "Outdoor dining patio atmosphere",
+    label: "Outdoor Vibes",
+  },
 ];
 
 export default function Gallery() {
@@ -32,27 +57,36 @@ export default function Gallery() {
             Feast Your <span className="text-ketchup">Eyes.</span>
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Real food photos coming soon. These placeholders show where owner-provided images will shine.
+            Bold flavors, fresh builds, and that perfect snap. See what is waiting for you at The Village.
           </p>
         </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-          {placeholderItems.map((item, i) => (
+          {galleryImages.map((item, i) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              whileHover={{ scale: 1.02 }}
-              className={`relative aspect-square rounded-2xl ${item.color} border-2 border-dashed border-gray-200 flex flex-col items-center justify-center gap-3 overflow-hidden group`}
+              className="group relative aspect-square rounded-2xl overflow-hidden shadow-sm shadow-black/10 hover:shadow-xl hover:shadow-black/20 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-white/80 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <ImageOff size={24} className="text-gray-300" />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Label */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-white font-bold text-sm drop-shadow-md">
+                  {item.label}
+                </span>
               </div>
-              <span className="text-sm font-bold text-gray-400">{item.label}</span>
-              <span className="text-xs text-gray-300">Photo placeholder</span>
             </motion.div>
           ))}
         </div>
@@ -64,7 +98,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="mt-10 text-center text-sm text-gray-400"
         >
-          Official food photography should be provided by the owner for the live site.
+          Stock photography used for preview. Replace with official Stang&apos;s photos before publishing.
         </motion.p>
       </div>
     </section>
